@@ -1,0 +1,5 @@
+venv
+youtube-transcription/audios/*
+youtube-transcription/outputs/*
+final_year_project/django.log
+final_year_project/migration/*
