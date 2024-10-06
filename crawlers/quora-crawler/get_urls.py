@@ -59,11 +59,10 @@ def get_all_url(driver: WebDriver):
 if __name__ == "__main__":
     
 
+    keyword_list = ['sumerian', 'sumer', 'old china', 'xia dynasty', 
+                    'ancient china', 'ancient culture', 'china and sumer', 'chinese and sumerian', 'china sumer', 'sumerian chinese']
     
-    # keyword_list = ['sumerian', 'sumer', 'old china', 'xia dynasty', 
-    #                 'ancient china', 'ancient culture', 'china and sumer', 'chinese and sumerian', 'china sumer', 'sumerian chinese']
-    
-    keyword = 'china sumer'
+    keyword = 'sumerian chinese'
     dns = "https://www.quora.com"
     
     chrome_options = Options()
@@ -84,4 +83,5 @@ if __name__ == "__main__":
 
     time.sleep(2)
     driver.quit()
+    
     

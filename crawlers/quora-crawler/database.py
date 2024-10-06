@@ -34,7 +34,5 @@ def get_all_url():
         return list(result)
     except Exception as e:
         print(f"An error occurred: {e}")
-        
-        
-url_table_list = get_all_url()
+        return []
         
