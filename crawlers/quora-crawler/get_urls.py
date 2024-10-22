@@ -13,14 +13,7 @@ import database
 from model import Url
 from bs4 import BeautifulSoup
 
-def login_quora(driver: WebDriver, email: str, password: str):
-    email_input = driver.find_element(by=By.ID, value = 'email')
-    password_input = driver.find_element(by=By.ID, value='password')
-    login_button = driver.find_element(by=By.XPATH, value='//*[@id="root"]/div/div[2]/div/div/div/div/div/div[2]/div[2]/div[4]/button')
-    
-    email_input.send_keys(email)
-    password_input.send_keys(password)
-    login_button.click()
+from common import scroll_down, login_quora
     
 def search_keyword(driver: WebDriver, keyword:str):
     try:
@@ -29,15 +22,12 @@ def search_keyword(driver: WebDriver, keyword:str):
         )
         search_session.send_keys(keyword)
         time.sleep(3)
-        search_session.send_keys(Keys.RETURN)
+        search_session.send_keys(Keys.ENTER)
         
     except Exception as e:
         print(f"An error occurred: {e}")
         
-def scroll_down(driver: WebDriver, scrolls=5):
-    for _ in range(scrolls):
-        driver.execute_script("window.scrollBy(0, document.body.scrollHeight);")
-        time.sleep(random.uniform(1,3))
+
         
 def get_all_url(driver: WebDriver):
     url_list = []

@@ -1,12 +1,7 @@
 import pymongo
 import pymongo.database
 from model import Url
-
-my_client: pymongo.MongoClient = pymongo.MongoClient("mongodb://localhost:27017/")
-my_db: pymongo.database.Database = my_client["final-year-project"]
-
-CRAWLERS_URL: pymongo.database.Collection = my_db["crawlers_url"]
-CRAWLERS_CONTENT: pymongo.database.Collection = my_db["crawlers_content"]
+from model import Content
 
 def insert_url_table(url: Url):
     my_client: pymongo.MongoClient = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -25,6 +20,20 @@ def insert_url_table(url: Url):
     except Exception as e:
         print(f"An error occurred: {e}")
         
+        
+def insert_content_table(content: Content):
+    my_client: pymongo.MongoClient = pymongo.MongoClient("mongodb://localhost:27017/")
+    my_db: pymongo.database.Database = my_client["final-year-project"]
+    crawlers_content: pymongo.database.Collection = my_db["crawlers_content"]
+    try:
+        
+        print("Going to insert")
+        result = crawlers_content.insert_one(vars(content))
+        print(f"Inserted document with ID: {result.inserted_id}")
+        
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        
 def get_all_url():
     my_client: pymongo.MongoClient = pymongo.MongoClient("mongodb://localhost:27017/")
     my_db: pymongo.database.Database = my_client["final-year-project"]
@@ -35,4 +44,3 @@ def get_all_url():
     except Exception as e:
         print(f"An error occurred: {e}")
         return []
-        
