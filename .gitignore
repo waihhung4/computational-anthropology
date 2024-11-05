@@ -1,5 +1,9 @@
 venv
 youtube-transcription/audios/*
 youtube-transcription/outputs/*
+youtube-transcription/texts/*
 final_year_project/django.log
 final_year_project/migration/*
+youtube-transcription/youtube-transcribe/.downloadAndExtract/__pycache__
+crawlers/quora-crawler/__pycache__
+

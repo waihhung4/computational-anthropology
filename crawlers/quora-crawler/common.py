@@ -34,6 +34,26 @@ def login_quora(driver: WebDriver, email: str, password: str):
     time.sleep(random.uniform(2, 3))
 
 ############# for text "more"
+def expand_replies(driver: WebDriver):
+    # Wait until the body tag is present
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
+    
+    scroll_down(driver, scrolls=5)
+    # Find all elements containing the word 'more'
+    more_elements = driver.find_elements(By.XPATH, "//*[contains(text(), '(more)')]")
+
+    # Click on each element found
+    for element in more_elements:
+        try:
+            # Use JavaScript to click the element
+            driver.execute_script("arguments[0].click();", element)
+            print("Element clicked")
+            time.sleep(random.uniform(1.2, 2))
+        except Exception as e:
+            print(f"Could not click on element: {e}")
+            
+            
+############# for text "more"
 # def expand_replies(driver: WebDriver):
 #     content_list = driver.find_elements(By.XPATH, '//*[@id="mainContent"]/div[3]/div')
 #     for content in content_list:
@@ -64,27 +84,7 @@ def login_quora(driver: WebDriver, email: str, password: str):
 #         if not found:
 #             print("No valid element found for this content.")
 
-def expand_replies(driver: WebDriver):
-    # Wait until the body tag is present
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
-    
-    scroll_down(driver, scrolls=5)
-    
-    
-    time.sleep(random.uniform(2, 3))
 
-    # Find all elements containing the word 'more'
-    more_elements = driver.find_elements(By.XPATH, "//*[contains(text(), '(more)')]")
-
-    # Click on each element found
-    for element in more_elements:
-        try:
-            # Use JavaScript to click the element
-            driver.execute_script("arguments[0].click();", element)
-            print("Element clicked")
-            time.sleep(random.uniform(2, 3))  # Optional: wait for 1-2 seconds between clicks to avoid overwhelming the server
-        except Exception as e:
-            print(f"Could not click on element: {e}")
 
 
 ################# for button "show more"

@@ -18,6 +18,7 @@ class Url:
         return self
         
 class Content:
-    def __init__(self, text, search_keyword):
+    def __init__(self, text, search_keyword, url):
         self.text: str = text
         self.search_keyword: str = search_keyword
+        self.url: str = url
