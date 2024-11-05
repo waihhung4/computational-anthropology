@@ -1,6 +1,7 @@
 venv
 youtube-transcription/audios/*
 youtube-transcription/outputs/*
+youtube-transcription/old_outputs/*
 youtube-transcription/texts/*
 final_year_project/django.log
 final_year_project/migration/*
