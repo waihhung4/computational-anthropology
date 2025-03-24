@@ -1,4 +1,7 @@
 venv
+.vscode
+__pycache__
+LDA
 youtube-transcription/audios/*
 youtube-transcription/outputs/*
 youtube-transcription/old_outputs/*
@@ -7,4 +10,8 @@ final_year_project/django.log
 final_year_project/migration/*
 youtube-transcription/youtube-transcribe/.downloadAndExtract/__pycache__
 crawlers/quora-crawler/__pycache__
+
+create_folder.py
+database.ipynb
+rename_files.py
 
