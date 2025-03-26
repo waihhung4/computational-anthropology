@@ -1,25 +1,24 @@
-venv
 .vscode
 __pycache__
 LDA
+venv
+fastapi
 
 
+fyp_data/crawlers/youtube-transcription/audios/*
+fyp_data/crawlers/youtube-transcription/outputs/*
+fyp_data/crawlers/youtube-transcription/old_outputs/*
+fyp_data/crawlers/youtube-transcription/texts/*
+fyp_data/crawlers/youtube-transcription/youtube-transcribe/.downloadAndExtract/__pycache__
+fyp_data/crawlers/quora-crawler/__pycache__
 
-youtube-transcription/audios/*
-youtube-transcription/outputs/*
-youtube-transcription/old_outputs/*
-youtube-transcription/texts/*
+fyp_data/squares
+fyp_data/create_folder.py
+fyp_data/rename_files.py
 
 
-final_year_project/django.log
-final_year_project/migration/*
-youtube-transcription/youtube-transcribe/.downloadAndExtract/__pycache__
-crawlers/quora-crawler/__pycache__
+fyp_web/frontend/node_modules/
 
-squares
-
-create_folder.py
-database.ipynb
-rename_files.py
+fyp_web/backend/__pycache__
 
 
