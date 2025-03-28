@@ -44,5 +44,4 @@ def get_url(page: int = Query(1, alias="page", ge=1), limit: int = Query(10, ali
 @app.get("/get_image_mapping")
 def get_url(page: int = Query(1, alias="page", ge=1), limit: int = Query(10, alias="limit", ge=1), sortBy: str = Query(None, alias="sortBy"), order: str = Query(None, alias="order")):
     data = get_image_mapping(page=page, limit=limit, sortBy=sortBy, order=order)
-    
     return data

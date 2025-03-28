@@ -5,7 +5,7 @@ venv
 fastapi
 
 
-fyp_data/crawlers/youtube-transcription/audios/*
+fyp_data/crawlersyoutube-transcription/audios/*
 fyp_data/crawlers/youtube-transcription/outputs/*
 fyp_data/crawlers/youtube-transcription/old_outputs/*
 fyp_data/crawlers/youtube-transcription/texts/*
