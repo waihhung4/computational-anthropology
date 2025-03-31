@@ -27,7 +27,7 @@ def get_all_url(page: int = 1, limit: int = 10, sortBy: int = None, order: int =
 def get_all_content(page: int = 1, limit: int = 10, sortBy: str = None, order: str = None):
     with pymongo.MongoClient("mongodb://localhost:27017/") as my_client:
         my_db = my_client["final-year-project"]
-        content_collection = my_db["final_content"]
+        content_collection = my_db["content"]
         try:
             skip = (page - 1) * limit
             order_val = pymongo.ASCENDING if order == "asc" else pymongo.DESCENDING
