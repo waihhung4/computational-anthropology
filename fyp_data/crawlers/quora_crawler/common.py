@@ -33,13 +33,11 @@ def login_quora(driver: WebDriver, email: str, password: str):
     
     time.sleep(random.uniform(2, 3))
 
-############# for text "more"
 def expand_replies(driver: WebDriver):
-    # Wait until the body tag is present
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
     
     scroll_down(driver, scrolls=5)
-    # Find all elements containing the word 'more'
+
     more_elements = driver.find_elements(By.XPATH, "//*[contains(text(), '(more)')]")
 
     # Click on each element found

@@ -2,10 +2,10 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from downloadAndExtract.youtubeDownload import download_youtube_audio
 from downloadAndExtract.transcribe import transcribe
 import json
-import multiprocessing
 import os
 import requests
 from database import insert_content_table
+import constant
 
 FILENAME = "youtube-transcribe/source.txt"
 MAX_PROCESSES = 4
@@ -99,8 +99,6 @@ def process_video(video_id, search_keyword):
 if __name__ == "__main__":
     for search_keyword in search_keyword_list:
         video_id_list = get_video_id_list(search_keyword)
-        # with multiprocessing.Pool(processes=MAX_PROCESSES) as pool:
-        #     pool.map(process_video, video_id_list)
         
         for video_id in video_id_list:
             process_video(video_id, search_keyword)
