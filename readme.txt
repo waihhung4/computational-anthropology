@@ -1,99 +1,71 @@
-# Computational Anthropology Between Chinese and Sumerian
+Computational Anthropology Between Chinese and Sumerian
 
-## Overview
-This project explores linguistic properties between **Chinese and Sumerian** by analyzing **textual data, sentiment, and character similarity** using **AI-based models**. Inspired by the book *Chinese and Sumerian*, it incorporates **natural language processing (NLP), topic modeling, and AI-based image similarity analysis**.
+Overview
+This project explores linguistic properties between Chinese and Sumerian by analyzing textual data and image similarity.
 
-## Features
-- **Data Collection:** Scrapes over **11,000 texts** from **YouTube and Quora**.
-- **Linguistic Analysis:** Applies **sentiment analysis, topic modeling, and word cloud visualization**.
-- **AI-Based Character Similarity:** Uses **ResNet, DINOv2, and SSIM** to compare ancient Chinese and Sumerian characters.
-- **Interactive Dashboard:** A visually structured homepage with data representations.
+Features
+- Data Collection: Scrapes over 11,000 texts from YouTube and Quora.
+- Data Analysis: Applies sentiment analysis, topic modeling, and word cloud visualization.
+- Image Alignment: Uses ResNet, DINOv2, and SSIM to compare ancient Chinese and Sumerian characters.
 
-## Technologies Used
-### **Backend (Python)**
-- **Web Scraping:** `BeautifulSoup`, `Selenium`
-- **Data Processing:** `pandas`, `NumPy`
-- **NLP & Sentiment Analysis:** `spaCy`, `NLTK`, `TextBlob`
-- **AI-based Similarity Analysis:** `torch`, `ResNet152`, `DINOv2`, `SSIM`
+Technologies Used
+Backend (Python v3.12.4)
+- Web Scraping: BeautifulSoup, Selenium
+- Data Processing: NLTK, gensim, pandas, spaCy, scikit-learn
+- Image Alignment:torch, ResNet152, DINOv2, SSIM
 
-### **Frontend (React)**
-- **Framework:** `React.js`, `Vite`
-- **Data Visualization:** `D3.js`, `Recharts`
-- **Styling:** `Tailwind CSS`
+Frontend (React)
+- Framework:React.js (v18.20.7)
+- Styling: Tailwind CSS
 
-### **Development Tools**
-- **Version Control:** `Git`, `GitHub`
-- **Testing:** `pytest`, `Jest`
-- **Deployment:** `Docker`, `GitHub Actions`
+Development Tools
+- Version Control: Git, GitHub
 
-## Project Structure
-```
-computational-anthropology/
-│── backend/
-│   ├── scraper/          # Web scraping modules
-│   ├── nlp/              # Text processing (sentiment, topic modeling)
-│   ├── similarity/       # AI-based similarity calculations
-│   ├── utils/            # Helper functions
-│   ├── tests/            # Unit tests
+Project Structure
+
+fyp/
+│── fyp_data/
+│   ├── crawlers/          # Web scraping modules
+│   ├── data_processing/   # Text processing (sentiment, topic modeling)
+│   ├── image_alignment/   # Image alignment
+│   ├── result_analysis/   # Analysis of result of text processing
+│   ├── squares/           # Characters extracted from the book Chinese and Sumerian
 │
-│── frontend/
-│   ├── src/
-│   │   ├── components/   # Reusable UI components
-│   │   ├── pages/        # Main views (Home, Analysis, Comparison)
-│   │   ├── services/     # API calls to backend
-│   │   ├── utils/        # Helper functions
-│
-│── docs/                 # Project documentation
+│── fyp_web/
+│   ├── frontend/
+│   │   ├── statics/      # All components
+│   ├── backend/
+│   │   ├── statics/      # Helper components
 │── README.md             # Project overview
 │── .gitignore            # Ignored files
-```
+│── requirements.txt      # Libraries for backend and data processing
 
-## Installation
-### **1. Clone the Repository**
-```bash
-git clone https://github.com/yourusername/computational-anthropology.git
+
+Installation
+1. Clone the Repository
+https://github.com/waihhung4/computational-anthropology.git
 cd computational-anthropology
-```
 
-### **2. Set Up Backend**
-```bash
-cd backend
+2. Set Up Backend
 python -m venv venv
-source venv/bin/activate  # (or `venv\Scripts\activate` on Windows)
+venv\Scripts\activate
 pip install -r requirements.txt
-```
 
-### **3. Set Up Frontend**
-```bash
+
+3. Set Up Frontend
 cd frontend
 npm install
-npm run dev
-```
+npm start
 
-## Usage
-- **Run the backend**: `python app.py`
-- **Run the frontend**: `npm run dev`
-- **Test the system**: `pytest` for Python tests, `npm test` for React tests.
 
-## Git Workflow
-### **Branching Strategy**
-- `main` → Stable production-ready version
-- `dev` → Active development branch
-- `feature/<feature-name>` → Individual features (e.g., `feature/topic-modeling`)
+Usage
+Run the backend: 
+cd fyp_web/backend
+fastapi run main.py
 
-### **Commit Conventions**
-- `feat: add topic modeling analysis`
-- `fix: resolve API issue in scraper`
-- `refactor: optimize sentiment analysis`
-
-## Future Enhancements
-- **Deep learning-based NLP models** for improved text analysis.
-- **Expanded dataset** to include more historical texts.
-- **Interactive visualization tools** to explore linguistic similarities.
+Run the frontend:
+cd fyp_web/frontend
+npm start
 
 ## Contributors
-- **Your Name** (@yourusername)
-
-## License
-This project is licensed under the **MIT License**.
-
+- Hung Wai Hin (Ryan)
