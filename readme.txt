@@ -18,6 +18,9 @@ Frontend (React)
 - Framework:React.js (v18.20.7)
 - Styling: Tailwind CSS
 
+Database (MongoDB v8.0.0)
+- Persist data
+
 Development Tools
 - Version Control: Git, GitHub
 
@@ -57,6 +60,17 @@ cd frontend
 npm install
 npm start
 
+4. Import data from the file (Optional, do it to see the table in the web app)
+1. connect to database
+  mongo --host localhost --port 27017 
+2. create a database named final-year-project
+  use final-year-project
+3. create three collection named content, url and image_mapping respectively
+  db.createCollection("content")
+  db.createCollection("url")
+  db.createCollection("image_mapping")
+4. import data from the given files using the following command
+  mongoimport --db final-year-project --collection {collection_name} --type csv --headerline --file {file_name}
 
 Usage
 Run the backend: 
